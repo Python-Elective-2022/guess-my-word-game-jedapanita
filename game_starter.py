@@ -43,36 +43,73 @@ def choose_word(word_list):
 word_list = load_words()
 
 def is_word_guessed(secret_word, letters_guessed):
+    for i in secret_word:
+        if i not in letters_guessed:
+            return False
+    return True
+
     '''
     secret_word: string, the word the user is guessing
     letters_guessed: list, what letters have been guessed so far
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE...
-    pass
+    """
+    for every letter in secret_word
+      if letter in list
+        return True
+    return False"""
+"""
+part 1
+For each letter in secret_word
+  If letter is not in letters_guessed
+    Return false
+Return true
+"""
 
 
 ### Testcases
 # print(is_word_guessed('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
 # print(is_word_guessed('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']))
 # print(is_word_guessed('pineapple', []))
-
-
-
+'''
+secret_word: string, the word the user is guessing
+etters_guessed: list, what letters have been guessed so far
+returns: string, comprised of letters and underscores that represents
+what letters in secret_word have been guessed so far.
+    '''
+"""
+part 2
+guess_string = ''
+for every letter in secret_word
+  if the letter is in letters_guessed
+    concatenate the letter on to guess_string
+  else
+    concatenate underscore space'_' on to guess_string
+    return guess_string
+"""
 def get_guessed_word(secret_word, letters_guessed):
-    '''
-    secret_word: string, the word the user is guessing
-    letters_guessed: list, what letters have been guessed so far
-    returns: string, comprised of letters and underscores that represents
-      what letters in secret_word have been guessed so far.
-    '''
-    # FILL IN YOUR CODE HERE...
-    pass
-    
-    
-    
-      
+  guess = ""
+  for letter in secret_word:
+      if letter in letters_guessed:
+        guess += letter
+      else:
+        guess += "_"
+        return guess
+
+
+
+
+"""
+part 2
+guess_list = []
+for every letter in secret_word
+  if the letter is in letters_guessed
+    append the letter to guess_list
+  otherwise
+    append '_' on guess_list
+"""
+
 #Testcases
 # print(get_guessed_word('apple', ['e', 'i', 'k', 'p', 'r', 's']))
 # print(get_guessed_word('durian', ['a', 'c', 'd', 'h', 'i', 'm', 'n', 'r', 't', 'u']))
